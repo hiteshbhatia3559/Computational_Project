@@ -12,7 +12,9 @@ def calculate_plot(list_of_i):
         for j in range(0, 101):
             counter = 0
             for i in range(0, N):
-                if math.hypot(random.uniform(-1, 1), random.uniform(-1, 1)) <= 1:
+                x_val = random.uniform(-1,1)
+                y_val = random.uniform(-1,1)
+                if ((x_val <=1) and (x_val >= 0)) and ((y_val <=1) and (y_val >= 0)) and (y_val <= math.pow(math.sin(1/x_val),2)):
                     counter += 1
             counter_list.append(counter)
 
@@ -23,7 +25,7 @@ def calculate_plot(list_of_i):
     return dict_of_values
 
 
-calculator = calculate_plot(range(8, 14))
+calculator = calculate_plot(range(8, 64))
 
 mean_line = []
 uncertainity_line = []
@@ -35,5 +37,5 @@ for item in calculator:
     pi_line.append(math.pi/4)
 
 plt.semilogx(mean_line,uncertainity_line)
-plt.hlines(math.pi/4,xmin=0,xmax=8192)
-plt.savefig('Ex1.png')
+plt.hlines(math.pi/4,xmin=0,xmax=18446744073709551616)
+plt.savefig('Ex2.png')

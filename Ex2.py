@@ -25,7 +25,7 @@ def calculate_plot(list_of_i):
     return dict_of_values
 
 
-calculator = calculate_plot(range(8, 64))
+calculator = calculate_plot(range(8, 14))
 
 mean_line = []
 uncertainity_line = []
@@ -37,5 +37,5 @@ for item in calculator:
     pi_line.append(math.pi/4)
 
 plt.semilogx(mean_line,uncertainity_line)
-plt.hlines(math.pi/4,xmin=0,xmax=18446744073709551616)
+# plt.hlines(math.pi/4,xmin=0,xmax=8192)
 plt.savefig('Ex2.png')

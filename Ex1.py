@@ -3,7 +3,7 @@ import math
 import statistics
 import matplotlib.pyplot as plt
 
-
+# Below function takes a list of values of N
 def calculate_plot(list_of_i):
     dict_of_values = []
     for N in list_of_i:

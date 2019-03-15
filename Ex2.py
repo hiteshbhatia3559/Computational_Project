@@ -9,7 +9,7 @@ def calculate_plot(list_of_i):
     for N in list_of_i:
         N = int(math.pow(2, N))
         counter_list = []
-        for j in range(0, 101):
+        for j in range(0, 100):
             counter = 0
             for i in range(0, N):
                 x_val = random.uniform(-1,1)

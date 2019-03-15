@@ -19,11 +19,14 @@ def calculate_plot(list_of_i):
                         y_val <= math.sqrt(1 - math.pow(x_val, 2))):
                     counter += 1
                 counter_list.append(counter)
+                try:
 
-                mean = statistics.mean(counter_list)
-                std_dev = statistics.pstdev(counter_list)
-                uncertainity = std_dev / math.sqrt(mean)
-                dict_of_values.append({str(N): (mean, uncertainity)})
+                    mean = statistics.mean(counter_list)
+                    std_dev = statistics.pstdev(counter_list)
+                    uncertainity = std_dev / math.sqrt(mean)
+                    dict_of_values.append({str(N): (mean, uncertainity)})
+                except:
+                    continue
             print("Iteration "+str(j))
 
     return dict_of_values
